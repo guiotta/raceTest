@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.otta.raceTest.upload.converter.LapConverter;
+import com.otta.raceTest.upload.converter.UploadFileConverter;
 
 @Controller
 public class UploadController {
 	@Autowired
-	private LapConverter lapConverter;
+	private UploadFileConverter lapConverter;
 	
 	@GetMapping("/")
     public String listUploadedFiles(Model model) {
