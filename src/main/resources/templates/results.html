@@ -4,7 +4,6 @@
 
 <head>
 <title>Race Results</title>
-<link rel="stylesheet" type="text/css" th:href="@{/css/login.css}" />
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script
@@ -15,7 +14,45 @@
 
 <body>
 	<div class="container">
-		
+
+		<div class="panel-group" style="margin-top: 40px">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<span th:utext="${userName}"></span>
+				</div>
+				<div class="panel-body">
+					<div>
+						<h2 class="text-center">Race Results</h2>
+						<table class="table table-striped">
+							<thead>
+								<tr>
+									<th>Pilot Number</th>
+									<th>Pilot Name</th>
+									<th>Complete Laps</th>
+									<th>Total Time</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:if="${raceResults.empty}">
+									<td colspan="2">No Race Result Available</td>
+								</tr>
+								<tr th:each="result : ${raceResults}">
+									<td><span th:text="${result.pilotIdentifier}"> Number </span></td>
+									<td><span th:text="${result.pilotName}"> Name </span></td>
+									<td><span th:text="${result.completeLaps}"> Laps </span></td>
+									<td><span th:text="${result.raceDurationReadable}"> Total Time </span></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+
+				</div>
+				<p class="admin-message-text text-center" th:utext="${userMessage}"></p>
+
+			</div>
+		</div>
+
 	</div>
 
 </body>

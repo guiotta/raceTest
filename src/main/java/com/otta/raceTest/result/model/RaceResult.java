@@ -4,6 +4,8 @@ import java.time.Duration;
 import java.time.LocalTime;
 import java.util.Objects;
 
+import org.apache.commons.lang3.time.DurationFormatUtils;
+
 public class RaceResult {
 	private final String pilotIdentifier;
 	private final String pilotName;
@@ -38,6 +40,10 @@ public class RaceResult {
 
 	public Duration getRaceDuration() {
 		return raceDuration;
+	}
+	
+	public String getRaceDurationReadable() {
+		return DurationFormatUtils.formatDuration(raceDuration.toMillis(), "mm:s.S", true);
 	}
 
 	@Override
