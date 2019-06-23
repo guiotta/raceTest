@@ -13,12 +13,15 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.otta.raceTest.result.model.RaceResult;
 import com.otta.raceTest.upload.converter.UploadFileConverter;
 import com.otta.raceTest.upload.model.FileData;
 import com.otta.raceTest.upload.service.UploadService;
 
 @Controller
 public class UploadController {
+	private static final String RACE_RESULTS_PARAM_NAME = "raceResults";
+	
 	private final UploadService service;
 
 	@Autowired
@@ -38,7 +41,8 @@ public class UploadController {
 		ModelAndView modelAndView = new ModelAndView();
 		redirectAttributes.addFlashAttribute("message",
 				"You successfully uploaded " + file.getOriginalFilename() + "!");
-		Collection<FileData> fileData = service.convertFileData(file);
+		Collection<RaceResult> raceResultCollection = service.convertFileToRaceResult(file);
+		modelAndView.addObject(RACE_RESULTS_PARAM_NAME, raceResultCollection);
 		modelAndView.setViewName("results");
 
 		return modelAndView;
