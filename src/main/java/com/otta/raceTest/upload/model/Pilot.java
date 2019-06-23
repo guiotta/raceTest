@@ -33,9 +33,23 @@ public class Pilot {
 		if (getClass() != obj.getClass())
 			return false;
 		Pilot other = (Pilot) obj;
-		return Objects.equals(name, other.name) && identifier == other.identifier;
+		return Objects.equals(name, other.name) && Objects.equals(identifier, other.identifier);
 	}
 
+	/**
+	 * Equals levando em consideração o log da corrida com o nome do piloto escrito de forma errada.
+	 * Necessário pois o log postado no github apresenta um erro de grafia no nome do Felipe Massa. 
+	 */
+	public boolean equalsWorkaround(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Pilot other = (Pilot) obj;
+		return Objects.equals(identifier, other.identifier);
+	}
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
