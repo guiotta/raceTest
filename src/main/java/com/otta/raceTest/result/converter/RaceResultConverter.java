@@ -28,7 +28,11 @@ public class RaceResultConverter {
 		Duration raceDuration = data.getLaps().stream()
 				.map((lap) -> lap.getDuration())
 				.reduce(Duration.ZERO, (a, b) -> a.plusMillis(b.toMillis()));
+		double speedSum = data.getLaps().stream()
+				.map((lap) -> lap.getVelocity())
+				.reduce(0D, Double::sum);
+		double averageSpeed = speedSum / data.getLaps().size();
 		
-		return new RaceResult(pilotIdentifier, pilotName, endRace, lapNumber, raceDuration);
+		return new RaceResult(pilotIdentifier, pilotName, endRace, lapNumber, raceDuration, averageSpeed);
 	}
 }

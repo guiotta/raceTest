@@ -31,6 +31,7 @@
 									<th>Pilot Name</th>
 									<th>Complete Laps</th>
 									<th>Total Time</th>
+									<th>Average Speed</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -43,6 +44,7 @@
 									<td><span th:text="${result.pilotName}"> Name </span></td>
 									<td><span th:text="${result.completeLaps}"> Laps </span></td>
 									<td><span th:text="${result.raceDurationReadable}"> Total Time </span></td>
+									<td><span th:text="${result.averageSpeedReadable}"> Average Speed </span></td>
 								</tr>
 							</tbody>
 						</table>
