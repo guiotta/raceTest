@@ -2,12 +2,16 @@ package com.otta.raceTest.upload.service;
 
 import java.io.IOException;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.otta.raceTest.result.comparator.RaceResultComparator;
 import com.otta.raceTest.result.converter.RaceResultConverter;
 import com.otta.raceTest.result.model.RaceResult;
 import com.otta.raceTest.upload.converter.UploadFileConverter;
@@ -26,7 +30,10 @@ public class UploadService {
 	
 	public Collection<RaceResult> convertFileToRaceResult(MultipartFile file) {
 		Collection<FileData> fileDataCollection = convertFileData(file);
-		return convertToRaceResult(fileDataCollection);
+		List<RaceResult> resultsCollection = convertToRaceResult(fileDataCollection).stream().collect(Collectors.toList());
+
+		Collections.sort(resultsCollection, new RaceResultComparator());
+		return resultsCollection;
 	}
 	
 	protected Collection<FileData> convertFileData(MultipartFile file) {
