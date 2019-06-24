@@ -8,6 +8,7 @@ import java.util.Objects;
 import org.apache.commons.lang3.time.DurationFormatUtils;
 
 public class RaceResult {
+	private static final String TIME_PATTERN = "mm:ss.S";
 	private static final String AVERAGE_SPEED_PATTERN = "#.###";
 	
 	private final String pilotIdentifier;
@@ -48,7 +49,7 @@ public class RaceResult {
 	}
 	
 	public String getRaceDurationReadable() {
-		return DurationFormatUtils.formatDuration(raceDuration.toMillis(), "mm:ss.S", true);
+		return DurationFormatUtils.formatDuration(raceDuration.toMillis(), TIME_PATTERN, true);
 	}
 
 	public double getAverageSpeed() {

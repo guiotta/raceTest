@@ -49,8 +49,33 @@
 							</tbody>
 						</table>
 					</div>
-
-
+					
+					</br></br>
+					
+					<div>
+						<h2 class="text-center">Best Laps in Race</h2>
+						<table class="table table-striped">
+							<thead>
+								<tr>
+									<th>Pilot Number</th>
+									<th>Pilot Name</th>
+									<th>Best Lap</th>
+									<th>Best Lap Time</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:if="${bestLaps.empty}">
+									<td colspan="2">No Race Result Available</td>
+								</tr>
+								<tr th:each="bestLap : ${bestLaps}">
+									<td><span th:text="${bestLap.pilotIdentifier}"> Number </span></td>
+									<td><span th:text="${bestLap.pilotName}"> Name </span></td>
+									<td><span th:text="${bestLap.bestLapNumber}"> Lap Number </span></td>
+									<td><span th:text="${bestLap.bestLapTimeReadable}"> Lap Time </span></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
 				</div>
 				<p class="admin-message-text text-center" th:utext="${userMessage}"></p>
 
