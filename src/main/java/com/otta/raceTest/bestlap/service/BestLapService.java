@@ -2,12 +2,16 @@ package com.otta.raceTest.bestlap.service;
 
 import java.io.IOException;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.otta.raceTest.bestlap.comparator.BestLapComparator;
 import com.otta.raceTest.bestlap.converter.BestLapConverter;
 import com.otta.raceTest.bestlap.model.BestLap;
 import com.otta.raceTest.upload.converter.UploadFileConverter;
@@ -26,9 +30,12 @@ public class BestLapService {
 
 	public Collection<BestLap> convertFileDataToBestLap(MultipartFile file) {
 		Collection<FileData> fileDataCollection = convertFileData(file);
-		return fileDataCollection.stream()
+		List<BestLap> bestLapCollection = fileDataCollection.stream()
 				.map((data) -> bestLapConverter.convert(data))
 				.collect(Collectors.toList());
+		Collections.sort(bestLapCollection, new BestLapComparator());
+		
+		return bestLapCollection;
 	}
 	
 	protected Collection<FileData> convertFileData(MultipartFile file) {
