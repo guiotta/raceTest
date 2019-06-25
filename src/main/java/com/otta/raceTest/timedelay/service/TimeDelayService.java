@@ -1,8 +1,9 @@
-package com.otta.raceTest.bestlap.service;
+package com.otta.raceTest.timedelay.service;
 
 import java.io.IOException;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -10,31 +11,31 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.otta.raceTest.bestlap.comparator.BestLapComparator;
-import com.otta.raceTest.bestlap.converter.BestLapConverter;
-import com.otta.raceTest.bestlap.model.BestLap;
+import com.otta.raceTest.timedelay.comparator.EndRaceDelayComparator;
+import com.otta.raceTest.timedelay.converter.EndRaceConverter;
+import com.otta.raceTest.timedelay.model.EndRaceDelay;
 import com.otta.raceTest.upload.converter.UploadFileConverter;
 import com.otta.raceTest.upload.model.FileData;
 
 @Service
-public class BestLapService {
+public class TimeDelayService {
 	private final UploadFileConverter fileConverter;
-	private final BestLapConverter bestLapConverter;
+	private final EndRaceConverter endRaceConverter;
 
 	@Autowired
-	public BestLapService(UploadFileConverter fileConverter, BestLapConverter bestLapConverter) {
+	public TimeDelayService(UploadFileConverter fileConverter, EndRaceConverter endRaceConverter) {
 		this.fileConverter = fileConverter;
-		this.bestLapConverter = bestLapConverter;
+		this.endRaceConverter = endRaceConverter;
 	}
 
-	public Collection<BestLap> convertFileDataToBestLap(MultipartFile file) {
+	public Collection<EndRaceDelay> convertToEndRaceDelay(MultipartFile file) {
 		Collection<FileData> fileDataCollection = convertFileData(file);
-		List<BestLap> bestLapCollection = fileDataCollection.stream()
-				.map((data) -> bestLapConverter.convert(data))
-				.collect(Collectors.toList());
-		Collections.sort(bestLapCollection, new BestLapComparator());
 		
-		return bestLapCollection;
+		List<EndRaceDelay> endRaceDelayCollection = endRaceConverter.convert(fileDataCollection)
+				.stream().collect(Collectors.toList());
+		Collections.sort(endRaceDelayCollection, new EndRaceDelayComparator());
+		
+		return endRaceDelayCollection;
 	}
 	
 	protected Collection<FileData> convertFileData(MultipartFile file) {

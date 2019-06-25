@@ -76,6 +76,31 @@
 							</tbody>
 						</table>
 					</div>
+					
+					</br></br>
+					
+					<div>
+						<h2 class="text-center">Time Delay</h2>
+						<table class="table table-striped">
+							<thead>
+								<tr>
+									<th>Pilot Number</th>
+									<th>Pilot Name</th>
+									<th>Delay To Winner</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:if="${endDelayTimes.empty}">
+									<td colspan="2">No Race Result Available</td>
+								</tr>
+								<tr th:each="endDelayTime : ${endDelayTimes}">
+									<td><span th:text="${endDelayTime.pilotIdentifier}"> Number </span></td>
+									<td><span th:text="${endDelayTime.pilotName}"> Name </span></td>
+									<td><span th:text="${endDelayTime.delayReadable}"> Delay </span></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
 				</div>
 				<p class="admin-message-text text-center" th:utext="${userMessage}"></p>
 
