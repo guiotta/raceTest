@@ -24,6 +24,6 @@ public class DurationConverter {
 		}
 
 		throw new IllegalArgumentException(
-				String.format("Duração com valor inválido para ser convertido: %s.", duration));
+				String.format("Inválid duration value: %s.", duration));
 	}
 }
