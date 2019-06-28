@@ -9,28 +9,33 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.StringTokenizer;
 
+import org.apache.commons.lang3.SystemUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.otta.raceTest.upload.model.FileData;
 import com.otta.raceTest.upload.model.Header;
+import com.otta.raceTest.upload.utils.OperationalSystemFileUnitGetter;
 
 @Component
 public class UploadFileConverter {
-	private static final String TEMP_FILE_PREFIX = "C://";
 	private static final String TEMP_FILE_POSTFIX = "test";
 
 	private final FileDataConverter fileDataConverter;
+	private final OperationalSystemFileUnitGetter operationalSystemFileUnitGetter;
 
 	@Autowired
-	public UploadFileConverter(FileDataConverter fileDataConverter) {
+	public UploadFileConverter(FileDataConverter fileDataConverter,
+			OperationalSystemFileUnitGetter operationalSystemFileUnitGetter) {
 		this.fileDataConverter = fileDataConverter;
+		this.operationalSystemFileUnitGetter = operationalSystemFileUnitGetter;
 	}
 
 	public Collection<FileData> convert(MultipartFile multipartFile) throws IOException {
 		Header header = null;
-		File tempFile = File.createTempFile(TEMP_FILE_PREFIX, TEMP_FILE_POSTFIX);
+		String tempFilePrefix = operationalSystemFileUnitGetter.get(SystemUtils.IS_OS_WINDOWS);
+		File tempFile = File.createTempFile(tempFilePrefix, TEMP_FILE_POSTFIX);
 		tempFile.deleteOnExit();
 		multipartFile.transferTo(tempFile);
 		Collection<FileData> dataCollection = new ArrayList<FileData>();
