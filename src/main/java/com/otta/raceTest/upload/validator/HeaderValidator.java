@@ -13,12 +13,12 @@ public class HeaderValidator {
 	private static final String[] VALID_HEADERS = {
 			"Hora",
 			"Piloto",
-			"Nº",
+			"NÂº",
 			"Volta",
 			"Tempo",
 			"Volta",
 			"Velocidade",
-			"média",
+			"mÃ©dia",
 			"da",
 			"volta"
 			};
