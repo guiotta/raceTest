@@ -1,8 +1,6 @@
 package com.otta.raceTest.upload.converter;
 
-import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
 import static org.mockito.BDDMockito.*;
 
 import java.text.ParseException;
@@ -11,7 +9,6 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.stream.Collectors;
 
-import org.assertj.core.util.Lists;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -21,7 +18,6 @@ import org.mockito.runners.MockitoJUnitRunner;
 
 import com.otta.raceTest.upload.model.FileData;
 import com.otta.raceTest.upload.model.Lap;
-import com.otta.raceTest.upload.model.Pilot;
 
 @RunWith(MockitoJUnitRunner.class)
 public class FileDataConverterTest {
