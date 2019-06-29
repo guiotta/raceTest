@@ -48,7 +48,7 @@ public class EndRaceDelayBuilderTest {
 		given(endRaceTimeBuilder.build(fileData)).willReturn(endRaceTime);
 		given(endRaceTime.getTime()).willReturn(endPilotTime);
 		given(fileData.getPilot()).willReturn(pilot);
-		given(pilot.getNumber()).willReturn(IDENTIFIER);
+		given(pilot.getIdentifier()).willReturn(IDENTIFIER);
 		given(pilot.getName()).willReturn(NAME);
 	}
 

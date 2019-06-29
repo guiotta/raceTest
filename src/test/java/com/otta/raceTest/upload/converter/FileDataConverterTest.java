@@ -53,7 +53,7 @@ public class FileDataConverterTest {
 		//then
 		Lap actualLap = fileData.getLaps().stream().collect(Collectors.toList()).get(0);
 		assertEquals(NAME, fileData.getPilot().getName());
-		assertEquals(IDENTIFIER, fileData.getPilot().getNumber());
+		assertEquals(IDENTIFIER, fileData.getPilot().getIdentifier());
 		assertEquals(1, fileData.getLaps().size());
 		assertEquals(LAP_NUMBER, actualLap.getNumber());
 		assertEquals(SPEED, actualLap.getVelocity());

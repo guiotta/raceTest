@@ -45,7 +45,7 @@ public class BestLapConverterTest {
 		
 		given(fileData.getPilot()).willReturn(pilot);
 		given(fileData.getLaps()).willReturn(Lists.list(lap1, lap2));
-		given(pilot.getNumber()).willReturn(IDENTIFIER);
+		given(pilot.getIdentifier()).willReturn(IDENTIFIER);
 		given(pilot.getName()).willReturn(NAME);
 		given(lap1.getNumber()).willReturn(LAP_NUMBER1);
 		given(lap1.getDuration()).willReturn(duration1);

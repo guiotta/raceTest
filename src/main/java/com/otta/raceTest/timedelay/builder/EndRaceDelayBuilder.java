@@ -24,7 +24,7 @@ public class EndRaceDelayBuilder {
 
 	public EndRaceDelay build(FileData fileData, LocalTime endRaceTime) {
 		LocalTime pilotRaceEndTime = endRaceTimeBuilder.build(fileData).getTime();
-		String pilotIdentifier = fileData.getPilot().getNumber();
+		String pilotIdentifier = fileData.getPilot().getIdentifier();
 		String pilotName = fileData.getPilot().getName();
 		
 		return new EndRaceDelay(pilotIdentifier, pilotName, Duration.between(endRaceTime, pilotRaceEndTime));

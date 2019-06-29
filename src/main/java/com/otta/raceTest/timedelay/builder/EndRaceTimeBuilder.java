@@ -25,7 +25,7 @@ public class EndRaceTimeBuilder {
 
 	public EndRaceTime build(FileData fileData) {
 		LocalTime endTime = endRaceLocalTimeExtractor.extract(fileData);
-		String identifier = fileData.getPilot().getNumber();
+		String identifier = fileData.getPilot().getIdentifier();
 		String name = fileData.getPilot().getName();
 
 		return new EndRaceTime(identifier, name, endTime);

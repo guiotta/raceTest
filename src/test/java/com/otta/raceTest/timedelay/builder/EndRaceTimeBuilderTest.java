@@ -39,7 +39,7 @@ public class EndRaceTimeBuilderTest {
 		
 		given(endRaceLocalTimeExtractor.extract(fileData)).willReturn(time);
 		given(fileData.getPilot()).willReturn(pilot);
-		given(pilot.getNumber()).willReturn(IDENTIFIER);
+		given(pilot.getIdentifier()).willReturn(IDENTIFIER);
 		given(pilot.getName()).willReturn(NAME);
 	}
 	

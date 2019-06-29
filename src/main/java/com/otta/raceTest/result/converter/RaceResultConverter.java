@@ -26,7 +26,7 @@ public class RaceResultConverter {
 				.max(Comparator.comparing(Lap::getNumber))
 				.orElseThrow(NoSuchElementException::new);
 		
-		String pilotIdentifier = pilot.getNumber();
+		String pilotIdentifier = pilot.getIdentifier();
 		String pilotName = pilot.getName();
 		int lapNumber = finalLap.getNumber();
 		LocalTime endRace = finalLap.getTime().plus(finalLap.getDuration());

@@ -42,7 +42,7 @@ public class TimeDelayService {
 		return endRaceDelayCollection;
 	}
 	
-	protected Collection<FileData> convertFileData(MultipartFile file) {
+	private Collection<FileData> convertFileData(MultipartFile file) {
 		try {
 			return fileConverter.convert(file);
 		} catch (IOException e) {

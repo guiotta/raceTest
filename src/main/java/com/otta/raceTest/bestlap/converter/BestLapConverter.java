@@ -18,7 +18,7 @@ import com.otta.raceTest.upload.model.Lap;
 public class BestLapConverter {
 
 	public BestLap convert(FileData fileData) {
-		String pilotIdentifier = fileData.getPilot().getNumber();
+		String pilotIdentifier = fileData.getPilot().getIdentifier();
 		String pilotName = fileData.getPilot().getName();
 		Lap bestLap = fileData.getLaps().stream()
 				.min(Comparator.comparing(Lap::getDuration))

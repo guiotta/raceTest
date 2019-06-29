@@ -50,7 +50,7 @@ public class RaceResultConverterTest {
 		given(fileData.getPilot()).willReturn(pilot);
 		given(fileData.getLaps()).willReturn(Lists.list(lap));
 		given(pilot.getName()).willReturn(NAME);
-		given(pilot.getNumber()).willReturn(IDENTIFIER);
+		given(pilot.getIdentifier()).willReturn(IDENTIFIER);
 		given(lap.getNumber()).willReturn(LAP_NUMBER);
 		given(lap.getDuration()).willReturn(duration);
 		given(lap.getTime()).willReturn(localtime);

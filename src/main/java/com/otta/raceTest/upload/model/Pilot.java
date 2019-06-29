@@ -11,7 +11,7 @@ public class Pilot {
 		this.name = name;
 	}
 
-	public String getNumber() {
+	public String getIdentifier() {
 		return identifier;
 	}
 
