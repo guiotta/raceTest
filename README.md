@@ -20,7 +20,7 @@ O segundo comando irá preparar a estrutura de pastas para que ele possa ser abe
 O último comando irá terminar de criar o ambiente necessário para a aplicação e subirá o servidor Jetty. Este passo é importante para preparar toda a estrutura de pastas dos recursos da aplicação.
 
 ## Utilizando a aplicação
-Após o servidor da aplicção iniciar, será possível acessá-la pelo endereço: localhost:8080.</br>
+Após o servidor da aplicação iniciar, será possível acessá-la pelo endereço: localhost:8080.</br>
 Será exibida uma tela com um campo para a escolha do arquivo. Este arquivo deve ser um arquivo de texto com o canteúdo do log da corrida que está no enunciado da prova e precisa estar com encoding UTF-8. Existe um arquivo com o nome log.txt dentro da pasta \src\main\resources, ele foi utilizado para os testes da aplicação.
 Após clicar no botão Submit, o arquivo será avaliado e, se for válido, será exibida uma tela com os resultados da corrida.
 
