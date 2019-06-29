@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Race Results</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div class="container">
+
+		<div class="panel-group" style="margin-top: 40px">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<span>Gympass Test - Results</span>
+				</div>
+				<div class="panel-body">
+					<div>
+						<h2 class="text-center">Race Results</h2>
+						<table class="table table-striped">
+							<thead>
+								<tr>
+									<th>Position</th>
+									<th>Pilot Number</th>
+									<th>Pilot Name</th>
+									<th>Complete Laps</th>
+									<th>Total Time</th>
+									<th>Average Speed</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:if="${raceResults.empty}">
+									<td colspan="2">No Race Result Available</td>
+								</tr>
+								<tr th:each="result : ${raceResults}">
+									<td><span th:text="${raceResults.indexOf(result) + 1}"> Position </span></td>
+									<td><span th:text="${result.pilotIdentifier}"> Number </span></td>
+									<td><span th:text="${result.pilotName}"> Name </span></td>
+									<td><span th:text="${result.completeLaps}"> Laps </span></td>
+									<td><span th:text="${result.raceDurationReadable}"> Total Time </span></td>
+									<td><span th:text="${result.averageSpeedReadable}"> Average Speed </span></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					
+					</br></br>
+					
+					<div>
+						<h2 class="text-center">Best Laps in Race</h2>
+						<table class="table table-striped">
+							<thead>
+								<tr>
+									<th>Pilot Number</th>
+									<th>Pilot Name</th>
+									<th>Best Lap</th>
+									<th>Best Lap Time</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:if="${bestLaps.empty}">
+									<td colspan="2">No Race Result Available</td>
+								</tr>
+								<tr th:each="bestLap : ${bestLaps}">
+									<td><span th:text="${bestLap.pilotIdentifier}"> Number </span></td>
+									<td><span th:text="${bestLap.pilotName}"> Name </span></td>
+									<td><span th:text="${bestLap.bestLapNumber}"> Lap Number </span></td>
+									<td><span th:text="${bestLap.bestLapTimeReadable}"> Lap Time </span></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					
+					</br></br>
+					
+					<div>
+						<h2 class="text-center">Time Delay</h2>
+						<table class="table table-striped">
+							<thead>
+								<tr>
+									<th>Pilot Number</th>
+									<th>Pilot Name</th>
+									<th>Delay To Winner</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:if="${endDelayTimes.empty}">
+									<td colspan="2">No Race Result Available</td>
+								</tr>
+								<tr th:each="endDelayTime : ${endDelayTimes}">
+									<td><span th:text="${endDelayTime.pilotIdentifier}"> Number </span></td>
+									<td><span th:text="${endDelayTime.pilotName}"> Name </span></td>
+									<td><span th:text="${endDelayTime.delayReadable}"> Delay </span></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<p class="admin-message-text text-center" th:utext="${userMessage}"></p>
+
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>
