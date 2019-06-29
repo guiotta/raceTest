@@ -9,6 +9,11 @@ import com.otta.raceTest.timedelay.extractor.EndRaceLocalTimeExtractor;
 import com.otta.raceTest.timedelay.model.EndRaceTime;
 import com.otta.raceTest.upload.model.FileData;
 
+/**
+ * Componente para construir um {@link EndRaceTime}.
+ * @author Guilherme
+ *
+ */
 @Component
 public class EndRaceTimeBuilder {
 	private final EndRaceLocalTimeExtractor endRaceLocalTimeExtractor;

@@ -16,6 +16,11 @@ import com.otta.raceTest.timedelay.model.EndRaceDelay;
 import com.otta.raceTest.upload.converter.UploadFileConverter;
 import com.otta.raceTest.upload.model.FileData;
 
+/**
+ * Componente para encapsular os comportamentos necessários para converter os dados do arquivo em {@link EndRaceDelay}.  
+ * @author Guilherme
+ *
+ */
 @Service
 public class TimeDelayService {
 	private final UploadFileConverter fileConverter;

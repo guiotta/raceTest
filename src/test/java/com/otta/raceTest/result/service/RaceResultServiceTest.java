@@ -1,4 +1,4 @@
-package com.otta.raceTest.upload.service;
+package com.otta.raceTest.result.service;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
@@ -23,13 +23,13 @@ import com.otta.raceTest.upload.converter.UploadFileConverter;
 import com.otta.raceTest.upload.model.FileData;
 
 @RunWith(MockitoJUnitRunner.class)
-public class UploadServiceTest {
+public class RaceResultServiceTest {
 	@Mock
 	private UploadFileConverter fileConverter;
 	@Mock
 	private RaceResultConverter raceResultConverter;
 	@InjectMocks
-	private UploadService uploadService;
+	private RaceResultService uploadService;
 
 	@Mock
 	private MultipartFile file;

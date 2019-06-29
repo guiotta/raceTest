@@ -9,6 +9,11 @@ import org.springframework.stereotype.Component;
 import com.otta.raceTest.upload.model.FileData;
 import com.otta.raceTest.upload.model.Lap;
 
+/**
+ * Componente para extrair o {@link LocalTime} do final da última volta completa de um piloto.
+ * @author Guilherme
+ *
+ */
 @Component
 public class EndRaceLocalTimeExtractor {
 

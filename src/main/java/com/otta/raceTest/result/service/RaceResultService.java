@@ -1,4 +1,4 @@
-package com.otta.raceTest.upload.service;
+package com.otta.raceTest.result.service;
 
 import java.io.IOException;
 import java.util.Collection;
@@ -16,13 +16,19 @@ import com.otta.raceTest.result.model.RaceResult;
 import com.otta.raceTest.upload.converter.UploadFileConverter;
 import com.otta.raceTest.upload.model.FileData;
 
+/**
+ * Componente para encapsular os comportamenos necessários para converter um arquivo inserido pelo usuário em uma
+ * coleção de {@link RaceResult}.
+ * @author Guilherme
+ *
+ */
 @Service
-public class UploadService {
+public class RaceResultService {
 	private final UploadFileConverter fileConverter;
 	private final RaceResultConverter raceResultConverter;
 	
 	@Autowired
-	public UploadService(UploadFileConverter fileConverter, RaceResultConverter raceResultConverter) {
+	public RaceResultService(UploadFileConverter fileConverter, RaceResultConverter raceResultConverter) {
 		this.fileConverter = fileConverter;
 		this.raceResultConverter = raceResultConverter;
 	}

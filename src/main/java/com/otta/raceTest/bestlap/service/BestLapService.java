@@ -16,6 +16,11 @@ import com.otta.raceTest.bestlap.model.BestLap;
 import com.otta.raceTest.upload.converter.UploadFileConverter;
 import com.otta.raceTest.upload.model.FileData;
 
+/**
+ * Componente com os encapsulando os comportamentos necessários para cálcular a melhor volta de cada piloto.
+ * @author Guilherme
+ *
+ */
 @Service
 public class BestLapService {
 	private final UploadFileConverter fileConverter;

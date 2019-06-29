@@ -19,6 +19,11 @@ import com.otta.raceTest.upload.model.Header;
 import com.otta.raceTest.upload.utils.OperationalSystemFileUnitGetter;
 import com.otta.raceTest.upload.validator.HeaderValidator;
 
+/**
+ * Componente para converter o arquivo inserido pelo usuário em uma coleção de {@link FileData}.
+ * @author Guilherme
+ *
+ */
 @Component
 public class UploadFileConverter {
 	private static final String ENCODING = "UTF8";

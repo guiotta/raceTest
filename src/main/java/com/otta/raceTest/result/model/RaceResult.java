@@ -7,6 +7,11 @@ import java.util.Objects;
 
 import org.apache.commons.lang3.time.DurationFormatUtils;
 
+/**
+ * Model contendo as informações sobre o final da corrida para um determinado piloto.
+ * @author Guilherme
+ *
+ */
 public class RaceResult {
 	private static final String TIME_PATTERN = "mm:ss.S";
 	private static final String AVERAGE_SPEED_PATTERN = "#.###";

@@ -4,6 +4,11 @@ import java.util.Comparator;
 
 import com.otta.raceTest.result.model.RaceResult;
 
+/**
+ * Classe para realizar comparações na ordenação entre {@link RaceResult}.
+ * @author Guilherme
+ *
+ */
 public class RaceResultComparator implements Comparator<RaceResult> {
 
 	@Override

@@ -12,6 +12,11 @@ import com.otta.raceTest.upload.model.FileData;
 import com.otta.raceTest.upload.model.Lap;
 import com.otta.raceTest.upload.model.Pilot;
 
+/**
+ * Componente para converter um {@link FileData} em um {@link RaceResult}.
+ * @author Guilherme
+ *
+ */
 @Component
 public class RaceResultConverter {
 

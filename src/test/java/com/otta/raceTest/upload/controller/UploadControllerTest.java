@@ -14,9 +14,9 @@ import org.springframework.web.servlet.ModelAndView;
 import com.otta.raceTest.bestlap.model.BestLap;
 import com.otta.raceTest.bestlap.service.BestLapService;
 import com.otta.raceTest.result.model.RaceResult;
+import com.otta.raceTest.result.service.RaceResultService;
 import com.otta.raceTest.timedelay.model.EndRaceDelay;
 import com.otta.raceTest.timedelay.service.TimeDelayService;
-import com.otta.raceTest.upload.service.UploadService;
 
 @RunWith(MockitoJUnitRunner.class)
 public class UploadControllerTest {
@@ -32,7 +32,7 @@ public class UploadControllerTest {
 	private TimeDelayService timeDelayService;
 
 	@Mock
-	private UploadService uploadService;
+	private RaceResultService RaceResultService;
 
 	private UploadController uploadController;
 
@@ -49,10 +49,10 @@ public class UploadControllerTest {
 
 	@Before
 	public void setUp() {
-		uploadController = spy(new UploadController(uploadService, bestLapService, timeDelayService));
+		uploadController = spy(new UploadController(RaceResultService, bestLapService, timeDelayService));
 
 		doReturn(modelAndView).when(uploadController).createModelAndView();
-		doReturn(Lists.list(raceResult)).when(uploadService).convertFileToRaceResult(file);
+		doReturn(Lists.list(raceResult)).when(RaceResultService).convertFileToRaceResult(file);
 		doReturn(Lists.list(bestLap)).when(bestLapService).convertFileDataToBestLap(file);
 		doReturn(Lists.list(endRaceDelay)).when(timeDelayService).convertToEndRaceDelay(file);
 	}

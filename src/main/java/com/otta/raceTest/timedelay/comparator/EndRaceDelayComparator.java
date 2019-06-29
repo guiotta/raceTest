@@ -4,6 +4,11 @@ import java.util.Comparator;
 
 import com.otta.raceTest.timedelay.model.EndRaceDelay;
 
+/**
+ * Classe para realizar comparações na ordenação entre {@link EndRaceDelay}.
+ * @author Guilherme
+ *
+ */
 public class EndRaceDelayComparator implements Comparator<EndRaceDelay> {
 
 	@Override

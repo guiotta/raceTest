@@ -37,8 +37,8 @@ public class Pilot {
 	}
 
 	/**
-	 * Equals levando em consideração o log da corrida com o nome do piloto escrito de forma errada.
-	 * Necessário pois o log postado no github apresenta um erro de grafia no nome do Felipe Massa. 
+	 * Equals levando em consideraï¿½ï¿½o o log da corrida com o nome do piloto escrito de forma errada.
+	 * NecessÃ¡rio pois o log postado no github apresenta um erro de grafia no nome do Felipe Massa. 
 	 */
 	public boolean equalsWorkaround(Object obj) {
 		if (this == obj)

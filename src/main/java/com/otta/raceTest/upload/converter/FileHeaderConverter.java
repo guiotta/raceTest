@@ -6,6 +6,11 @@ import java.util.StringTokenizer;
 
 import org.springframework.stereotype.Component;
 
+/**
+ * Componente para converter a primeira linha do arquivo inserido pelo usuário em uma coleção de Strings.
+ * @author Guilherme
+ *
+ */
 @Component
 public class FileHeaderConverter {
 

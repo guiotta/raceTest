@@ -5,6 +5,11 @@ import java.util.Objects;
 
 import org.apache.commons.lang3.time.DurationFormatUtils;
 
+/**
+ * Modelo contendo as informações necessárias sobre a melhor volta de um pilot.
+ * @author Guilherme
+ *
+ */
 public class BestLap {
 	private static final String TIME_PATTERN = "mm:ss.S";
 	

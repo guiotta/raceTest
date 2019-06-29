@@ -8,6 +8,11 @@ import org.springframework.stereotype.Component;
 import com.otta.raceTest.timedelay.model.EndRaceDelay;
 import com.otta.raceTest.upload.model.FileData;
 
+/**
+ * Componente para construir um {@link EndRaceDelay} partindo de um {@link FileData} e um {@link LocalTime}.
+ * @author Guilherme
+ *
+ */
 @Component
 public class EndRaceDelayBuilder {
 	private EndRaceTimeBuilder endRaceTimeBuilder;

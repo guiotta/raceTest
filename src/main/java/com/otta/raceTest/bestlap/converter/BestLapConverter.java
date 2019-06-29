@@ -9,6 +9,11 @@ import com.otta.raceTest.bestlap.model.BestLap;
 import com.otta.raceTest.upload.model.FileData;
 import com.otta.raceTest.upload.model.Lap;
 
+/**
+ * Componente para realizar a conversão de um {@link FileData} para um {@link BestLap}.
+ * @author Guilherme
+ *
+ */
 @Component
 public class BestLapConverter {
 

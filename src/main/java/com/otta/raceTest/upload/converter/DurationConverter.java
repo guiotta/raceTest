@@ -6,6 +6,11 @@ import java.util.regex.Pattern;
 
 import org.springframework.stereotype.Component;
 
+/**
+ * Componente para converter um valor de texto em um objeto {@link Duration}.
+ * @author Guilherme
+ *
+ */
 @Component
 public class DurationConverter {
 	private static final String REGEX_TO_DURATION = "((\\d{1,2}):(\\d{2}).(\\d{3}))";
@@ -24,6 +29,6 @@ public class DurationConverter {
 		}
 
 		throw new IllegalArgumentException(
-				String.format("Inválid duration value: %s.", duration));
+				String.format("Invalid duration value: %s.", duration));
 	}
 }

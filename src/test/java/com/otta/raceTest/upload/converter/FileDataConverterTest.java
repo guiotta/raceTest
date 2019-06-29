@@ -21,9 +21,9 @@ import com.otta.raceTest.upload.model.Lap;
 
 @RunWith(MockitoJUnitRunner.class)
 public class FileDataConverterTest {
-	private static final String VALID_LINE = "23:49:08.277      038 – F.MASSA                           1		1:02.852                        44,275";
-	private static final String INVALID_PARSE_LINE = "23:49:08.277      038 – F.MASSA                           1		1:02.852                        a";
-	private static final String INVALID_LAP_LINE = "23:49:08.277      038 – F.MASSA                           a		1:02.852                        44,275";
+	private static final String VALID_LINE = "23:49:08.277      038 - F.MASSA                           1		1:02.852                        44,275";
+	private static final String INVALID_PARSE_LINE = "23:49:08.277      038 - F.MASSA                           1		1:02.852                        a";
+	private static final String INVALID_LAP_LINE = "23:49:08.277      038 - F.MASSA                           a		1:02.852                        44,275";
 	private static final String IDENTIFIER = "038";
 	private static final String NAME = "F.MASSA";
 	private static final int LAP_NUMBER = 1;

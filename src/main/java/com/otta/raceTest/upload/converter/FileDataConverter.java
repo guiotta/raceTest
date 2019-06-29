@@ -17,6 +17,11 @@ import com.otta.raceTest.upload.model.FileData;
 import com.otta.raceTest.upload.model.Lap;
 import com.otta.raceTest.upload.model.Pilot;
 
+/**
+ * Componente para converter uma linha de texto do arquivo inserido em um {@link FileData}.
+ * @author Guilherme
+ *
+ */
 @Component
 public class FileDataConverter {
 	private final DurationConverter durationConverter;
@@ -31,7 +36,7 @@ public class FileDataConverter {
 
 		String time = stknz.nextToken();
 		String identifier = stknz.nextToken();
-		// Busca character usado na separação entre as informações do piloto
+		// Busca character usado na separaï¿½ï¿½o entre as informaï¿½ï¿½es do piloto
 		String separator = stknz.nextToken();
 		String name = stknz.nextToken();
 		int lapNumber = Integer.parseInt(stknz.nextToken());

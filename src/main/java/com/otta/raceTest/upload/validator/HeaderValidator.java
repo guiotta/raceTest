@@ -8,6 +8,11 @@ import org.springframework.stereotype.Component;
 
 import com.otta.raceTest.upload.model.Header;
 
+/**
+ * Componente para validar a presença dos headers da tabela dentro do arquivo inserido pelo usuário.
+ * @author Guilherme
+ *
+ */
 @Component
 public class HeaderValidator {
 	private static final String[] VALID_HEADERS = {

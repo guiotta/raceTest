@@ -14,6 +14,11 @@ import com.otta.raceTest.timedelay.model.EndRaceDelay;
 import com.otta.raceTest.timedelay.model.EndRaceTime;
 import com.otta.raceTest.upload.model.FileData;
 
+/**
+ * Componente para converter uma coleção de {@link FileData} em uma coleção de {@link EndRaceDelay}.
+ * @author Guilherme
+ *
+ */
 @Component
 public class EndRaceConverter {
 	private EndRaceTimeBuilder endRaceTimeBuilder;
