@@ -46,8 +46,4 @@ public class UploadService {
 	protected Collection<RaceResult> convertToRaceResult(Collection<FileData> fileData) {
 		return fileData.stream().map((data) -> raceResultConverter.convert(data)).collect(Collectors.toList());
 	}
-
-	public boolean validate(MultipartFile file) {
-		return true;
-	}
 }

@@ -5,6 +5,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 import static org.mockito.BDDMockito.*;
 
+import java.io.IOException;
 import java.time.Duration;
 import java.util.Collection;
 
@@ -31,7 +32,7 @@ public class BestLapServiceTest {
 	private UploadFileConverter fileConverter;
 	@InjectMocks
 	private BestLapService bestLapService;
-	
+
 	@Mock
 	private MultipartFile file;
 	@Mock
@@ -42,7 +43,7 @@ public class BestLapServiceTest {
 	private BestLap bestLap1;
 	@Mock
 	private BestLap bestLap2;
-	
+
 	private Duration bestTime1;
 	private Duration bestTime2;
 
@@ -50,7 +51,7 @@ public class BestLapServiceTest {
 	public void setUp() throws Exception {
 		bestTime1 = Duration.ZERO;
 		bestTime2 = Duration.ZERO;
-		
+
 		given(fileConverter.convert(file)).willReturn(Lists.list(fileData1, fileData2));
 		given(bestLapConverter.convert(fileData1)).willReturn(bestLap1);
 		given(bestLapConverter.convert(fileData2)).willReturn(bestLap2);
@@ -60,11 +61,20 @@ public class BestLapServiceTest {
 
 	@Test
 	public void shouldCorrectlyConvertFile() {
-		//given
-		//when
+		// given
+		// when
 		Collection<BestLap> actualValues = bestLapService.convertFileDataToBestLap(file);
-		//then
+		// then
 		assertThat(actualValues, is(Lists.list(bestLap1, bestLap2)));
+	}
+
+	@Test(expected = IllegalArgumentException.class)
+	public void shouldThrowExceptionIfCouldNotOpenFile() throws IOException {
+		// given
+		given(fileConverter.convert(file)).willThrow(IOException.class);
+		// when
+		bestLapService.convertFileDataToBestLap(file);
+		// then
 	}
 
 }

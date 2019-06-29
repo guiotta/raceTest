@@ -5,6 +5,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 import static org.mockito.BDDMockito.*;
 
+import java.io.IOException;
 import java.time.Duration;
 import java.util.Collection;
 
@@ -64,6 +65,15 @@ public class TimeDelayServiceTest {
 		Collection<EndRaceDelay> actualValues = timeDelayService.convertToEndRaceDelay(file);
 		//then
 		assertThat(actualValues, is(Lists.list(endRaceDelay1, endRaceDelay2)));
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void shouldThrowExceptionIfCouldNotOpenFile() throws IOException {
+		// given
+		given(fileConverter.convert(file)).willThrow(IOException.class);
+		// when
+		timeDelayService.convertToEndRaceDelay(file);
+		// then
 	}
 
 }
