@@ -11,7 +11,7 @@ public class FileHeaderConverter {
 
 	public Collection<String> convert(String line) {
 		Collection<String> readValues = new ArrayList<String>();
-		
+
 		if (line == null) {
 			throw new IllegalArgumentException("Could not read Table Headers in log file.");
 		} else {
@@ -20,7 +20,7 @@ public class FileHeaderConverter {
 				readValues.add(stknz.nextToken());
 			}
 		}
-		
+
 		return readValues;
-	} 
+	}
 }

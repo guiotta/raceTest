@@ -2,8 +2,9 @@ package com.otta.raceTest.upload.converter;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -20,6 +21,7 @@ import com.otta.raceTest.upload.validator.HeaderValidator;
 
 @Component
 public class UploadFileConverter {
+	private static final String ENCODING = "UTF8";
 	private static final String TEMP_FILE_POSTFIX = "test";
 
 	private final FileDataConverter fileDataConverter;
@@ -65,7 +67,6 @@ public class UploadFileConverter {
 					dataCollection.add(fileData);
 				}
 			}
-			System.out.println(dataCollection);
 		} catch (ParseException e) {
 			throw new IllegalArgumentException(String.format("Invalid value found in %s.", line), e);
 		} finally {
@@ -87,6 +88,6 @@ public class UploadFileConverter {
 		tempFile.deleteOnExit();
 		multipartFile.transferTo(tempFile);
 		
-		return new BufferedReader(new FileReader(tempFile));
+		return new BufferedReader(new InputStreamReader(new FileInputStream(tempFile), ENCODING));
 	}
 }

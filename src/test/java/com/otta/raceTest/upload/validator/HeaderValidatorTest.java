@@ -15,12 +15,12 @@ import com.otta.raceTest.upload.model.Header;
 
 @RunWith(MockitoJUnitRunner.class)
 public class HeaderValidatorTest {
-	private static final String[] VALID_HEADERS = { "Hora", "Piloto", "Nº", "Volta", "Tempo", "Volta", "Velocidade",
-			"média", "da", "volta" };
-	private static final String[] INVALID_HEADERS = { "Hora", "Piloto", "Nº", "Volta", "Tempo", "Volta", "Velocidade",
-			"média", "da", "volta", "mais", "campos", "aqui" };
-	private static final String[] ANOTHER_HEADERS = { "Hora", "Diferente", "Nº", "Volta", "D", "Volta", "Diferente",
-			"média", "da", "volta" };
+	private static final String[] VALID_HEADERS = { "Hora", "Piloto", "NÂº", "Volta", "Tempo", "Volta", "Velocidade",
+			"mÃ©dia", "da", "volta" };
+	private static final String[] INVALID_HEADERS = { "Hora", "Piloto", "NÂº", "Volta", "Tempo", "Volta", "Velocidade",
+			"mÃ©dia", "da", "volta", "mais", "campos", "aqui" };
+	private static final String[] ANOTHER_HEADERS = { "Hora", "Diferente", "NÂº", "Volta", "D", "Volta", "Diferente",
+			"mÃ©dia", "da", "volta" };
 
 	private HeaderValidator headerValidator;
 
