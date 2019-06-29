@@ -12,7 +12,7 @@ Configurar as variáveis de ambiente para o Java e Maven facilitará a tarefa de
 ## Baixando o projeto 
 Após clonar o projeto, será necessário rodar o seguinte comando maven no console:
 * mvn clean install
-* mvn eclipse:eclpse
+* mvn eclipse:eclipse
 * mvn spring-boot:run</br>
 
 O primeiro comando irá limpar a pasta do projeto e baixar as dependências para que ele possa ser compilado.</br>
