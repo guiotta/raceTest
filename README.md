@@ -17,7 +17,7 @@ Após clonar o projeto, será necessário rodar o seguinte comando maven no cons
 
 O primeiro comando irá limpar a pasta do projeto e baixar as dependências para que ele possa ser compilado.</br>
 O segundo comando irá preparar a estrutura de pastas para que ele possa ser aberto pelo Eclipse. Este passo pode ser ignorado se a IDE utilizada não foi o Eclipse</br>
-O último comando irá terminar de criar o ambiente necessário para a aplicação e subirá o servidor Jetty. Este passo é importante para preparar toda a estrutura de pastas dos recursos da aplicação.
+O último comando irá terminar de criar o ambiente necessário para a aplicação e subirá o servidor Tomcat. Este passo é importante para preparar toda a estrutura de pastas dos recursos da aplicação.
 
 ## Utilizando a aplicação
 Após o servidor da aplicação iniciar, será possível acessá-la pelo endereço: localhost:8080.</br>
