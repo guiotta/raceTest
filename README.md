@@ -21,7 +21,7 @@ O último comando irá terminar de criar o ambiente necessário para a aplicaç�
 
 ## Utilizando a aplicação
 Após o servidor da aplicação iniciar, será possível acessá-la pelo endereço: localhost:8080.</br>
-Será exibida uma tela com um campo para a escolha do arquivo. Este arquivo deve ser um arquivo de texto com o canteúdo do log da corrida que está no enunciado da prova e precisa estar com encoding UTF-8. Existe um arquivo com o nome log.txt dentro da pasta \src\main\resources, ele foi utilizado para os testes da aplicação.
+Será exibida uma tela com um campo para a escolha do arquivo. Este arquivo deve ser um arquivo de texto com o canteúdo do log da corrida que está no enunciado da prova e precisa estar com encoding UTF-8. Existe um arquivo com o nome log.txt dentro da pasta \src\main\resources, ele foi utilizado para os testes da aplicação.</br>
 Após clicar no botão Submit, o arquivo será avaliado e, se for válido, será exibida uma tela com os resultados da corrida.
 
 ## Nota importante
